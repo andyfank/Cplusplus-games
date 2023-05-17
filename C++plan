@@ -1,0 +1,74 @@
+/*通过键盘控制小飞机游戏
+  语言:C++
+  版本:V1.0
+   */
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int playerX=40;
+int playerY=10;
+
+//定义飞机
+plan(){
+	
+	for(int i=0;i<=playerY;i++){
+		cout<<endl;
+	}
+	for(int i=0;i<playerX;i++)
+		
+		cout<<" ";
+	cout<<"  *"<<endl;
+	for(int i=0;i<playerX;i++)
+		
+		cout<<" ";
+	cout<<"  *"<<endl;
+	for(int i=0;i<playerX;i++)
+		
+		cout<<" ";
+	
+	cout<<"**O**"<<endl;
+	for(int i=0;i<playerX;i++)
+		
+		cout<<" ";
+	cout<<" * *"<<endl;
+	for(int i=0;i<playerX;i++)
+		
+		cout<<" ";
+	cout<<"*   *"<<endl;
+	
+}
+int main(){
+ 
+   bool quit=false;
+   while(!quit){
+	   if(_kbhit()){
+		   switch (_getch()) {
+		   case 'a':
+		   case 75://按下a键或左键,飞机左移
+			   playerX--;
+			   break;
+		   case 'd':
+		   case 77: //按下d键或右键,飞机右移
+			   playerX++;
+			   break;
+		   case 'w':
+		   case 72: //按下w键或上键,飞机上移
+			   playerY--;
+			   break;
+		   case 's':
+		   case 80: //按下s键或下键,飞机下移
+			   playerY++;
+			   break;
+		   case 'q':
+			   quit=true;
+			   break;
+		   
+		   }
+	   }
+	   system("cls"); //清屏
+	   
+       plan();
+	   _sleep(2);
+   }
+   return 0;
+}
