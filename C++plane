@@ -9,7 +9,7 @@ int playerX=40;
 int playerY=10;
 
 //定义飞机
-plan(){
+plane(){
 	
 	for(int i=0;i<=playerY;i++){
 		cout<<endl;
@@ -67,7 +67,7 @@ int main(){
 	   }
 	   system("cls"); //清屏
 	   
-       plan();
+       plane();
 	   _sleep(2);
    }
    return 0;
